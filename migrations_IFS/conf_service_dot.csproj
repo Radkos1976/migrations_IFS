@@ -10,10 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Settings.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.ComponentModel.Composition" Version="4.5.0" />
   </ItemGroup>
 
