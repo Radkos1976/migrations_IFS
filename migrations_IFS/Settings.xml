@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DEFINITONS>
+  <ORACLE>
+    <ConnectionString>Password=tyghbn;User ID = radkos; Data Source = prod8</ConnectionString>
+  </ORACLE>
+  <POSTEGRESQL>
+    <Host>10.0.1.29</Host>
+    <Port>5432</Port>
+    <CommandTimeout>0</CommandTimeout>
+    <ConnectionIdleLifetime >30</ConnectionIdleLifetime>
+    <ApplicationName>ZAKUPY_CONNECTOR</ApplicationName>
+    <Username>RADKOS</Username>
+    <Password>tyghbn</Password>
+    <Database>zakupy</Database>
+  </POSTEGRESQL>
+  <MAIL>
+    <Port>587</Port>
+    <DeliveryFormat>1</DeliveryFormat>
+    <Host>sits.home.pl</Host>
+    <EnableSsl>false</EnableSsl>
+    <Timeout>10000</Timeout>
+    <DeliveryMethod>0</DeliveryMethod>
+    <UseDefaultCredentials>false</UseDefaultCredentials>
+    <CredentialsUserName>radek.kosobucki@sits.home.pl</CredentialsUserName>
+    <CredentialsPassword>QcG158#11</CredentialsPassword>
+  </MAIL>
+  <SERVICE>
+    <CALENDAR> SITS </CALENDAR>
+  </SERVICE>
+</DEFINITONS>
