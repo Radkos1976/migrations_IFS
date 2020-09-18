@@ -33,12 +33,17 @@ namespace Common
         {
             void Run();
         }
+        public interface ISimpDBoperations <T>
+        {
+            Task<T> Get_ora();
+        }
         /// <summary>
         /// Metods for Database
         /// </summary>
-        public interface IDBoperations<T>
+        public interface IDBoperations<T> : ISimpDBoperations <T>
         {
-            Task<List<T>> Get_Ora();
+            Task<List<T>> Get_Ora(string Sql_ora,string Task_name);
+            Task<List<T>> Get_PSTGR(string Sql_ora, string Task_name);
         }
     }
 }
