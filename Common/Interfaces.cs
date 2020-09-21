@@ -44,6 +44,7 @@ namespace Common
         {
             Task<List<T>> Get_Ora(string Sql_ora,string Task_name);
             Task<List<T>> Get_PSTGR(string Sql_ora, string Task_name);
+
         }
     }
 }
