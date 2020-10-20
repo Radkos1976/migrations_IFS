@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB_Conect", "DB_Conect\DB_C
 		{A58FF690-6E0D-4367-838F-143573C81455} = {A58FF690-6E0D-4367-838F-143573C81455}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event_plugin", "Event_plugin\Event_plugin.csproj", "{44EA1CCA-9192-46DD-BA83-07E8468ABFD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event_plugin", "Event_plugin\Event_plugin.csproj", "{44EA1CCA-9192-46DD-BA83-07E8468ABFD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accelerate_Possibilty", "Accelerate_Possibilty\Accelerate_Possibilty.csproj", "{A46F6840-B675-42A8-926A-6E5DB135EFDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{44EA1CCA-9192-46DD-BA83-07E8468ABFD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44EA1CCA-9192-46DD-BA83-07E8468ABFD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44EA1CCA-9192-46DD-BA83-07E8468ABFD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A46F6840-B675-42A8-926A-6E5DB135EFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46F6840-B675-42A8-926A-6E5DB135EFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46F6840-B675-42A8-926A-6E5DB135EFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46F6840-B675-42A8-926A-6E5DB135EFDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{00FA859F-BBE8-42FA-80A7-50D1786383E7} = {EE111615-B447-4D0C-A3F4-FE9E0241DC79}
 		{44EA1CCA-9192-46DD-BA83-07E8468ABFD0} = {EE111615-B447-4D0C-A3F4-FE9E0241DC79}
+		{A46F6840-B675-42A8-926A-6E5DB135EFDE} = {EE111615-B447-4D0C-A3F4-FE9E0241DC79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57FA9AC0-BC2D-4BC1-B0FD-CDB7B22CDED2}
