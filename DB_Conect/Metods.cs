@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.Collections.Concurrent;
 using System.Data;
+using static Common.Interfaces;
 
 
 namespace DB_Conect
@@ -14,7 +15,7 @@ namespace DB_Conect
     /// <summary>
     /// Universal class for update dataset from oracle into postegresql tables
     /// </summary>
-    public class Update_pstgr_from_Ora<T> where T : class, new()
+    public class Update_pstgr_from_Ora<T> : ISimpDBORAoperations<T>, ISimpPOSTGRoperations<T>, IDBoperations<T> where T :  class, new()
     {
         public Dictionary<string, NpgsqlTypes.NpgsqlDbType> PostegresTyp = new Dictionary<string, NpgsqlTypes.NpgsqlDbType>
         {
