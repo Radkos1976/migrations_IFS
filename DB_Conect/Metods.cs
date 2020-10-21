@@ -15,7 +15,7 @@ namespace DB_Conect
     /// <summary>
     /// Universal class for update dataset from oracle into postegresql tables
     /// </summary>
-    public class Update_pstgr_from_Ora<T> : ISimpDBORAoperations<T>, ISimpPOSTGRoperations<T>, IDBoperations<T> where T :  class, new()
+    public class Update_pstgr_from_Ora<T> :  IDBoperations<T> where T :  class, new()
     {
         public Dictionary<string, NpgsqlTypes.NpgsqlDbType> PostegresTyp = new Dictionary<string, NpgsqlTypes.NpgsqlDbType>
         {
@@ -329,7 +329,7 @@ namespace DB_Conect
         /// <param name="IntSorted_by"></param>
         /// <param name="guid_col"></param>
         /// <returns></returns>
-        public Changes_List<T> Changes(List<T> Old_list, List<T> New_list, string[] ID_column, string IntSorted_by, string guid_col)
+        public IChanges_list<T> Changes(List<T> Old_list, List<T> New_list, string[] ID_column, string IntSorted_by, string guid_col)
         {
             Changes_List<T> modyfications = new Changes_List<T>();
             try
@@ -500,7 +500,7 @@ namespace DB_Conect
         /// <param name="name_table"></param>
         /// <param name="guid_col"></param>
         /// <returns></returns>
-        public async Task<int> PSTRG_Changes_to_dataTable(Changes_List<T> _list, string name_table, string guid_col, string[] query_before, string[] query_after)
+        public async Task<int> PSTRG_Changes_to_dataTable(IChanges_list<T> _list, string name_table, string guid_col, string[] query_before, string[] query_after)
         {
 
             try
@@ -712,11 +712,11 @@ namespace DB_Conect
         public OracleDbType Field_type { get; set; }
         public int Dtst_col { get; set; }
     }
-    public class Changes_List<T> where T : class, new()
+    public class Changes_List<T> : IChanges_list<T>  where T : class, new()
     {
-        public List<T> Insert;
-        public List<T> Update;
-        public List<T> Delete;
+        public List<T> Insert { get; set; }
+        public List<T> Update { get; set; }
+        public List<T> Delete { get; set; }
     }
     public interface IPropertyAccessor
     {
@@ -726,7 +726,7 @@ namespace DB_Conect
     }
     public static class PropertyInfoHelper
     {
-        private static ConcurrentDictionary<PropertyInfo, IPropertyAccessor> _cache =
+        private static readonly ConcurrentDictionary<PropertyInfo, IPropertyAccessor> _cache =
             new ConcurrentDictionary<PropertyInfo, IPropertyAccessor>();
 
         public static IPropertyAccessor GetAccessor(PropertyInfo propertyInfo)
