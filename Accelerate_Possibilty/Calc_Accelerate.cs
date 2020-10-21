@@ -105,5 +105,4 @@ namespace Accelerate_Possibilty
             return Work_day.Equals(other.Work_day) && Part_no.Equals(other.Part_no);
         }
     }
-
 }
