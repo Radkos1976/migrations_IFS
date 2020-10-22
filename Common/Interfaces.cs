@@ -76,6 +76,10 @@ namespace Common
             Task<List<T>> Get_PSTGR(string Sql_ora,
                                     string Task_name);
         }
+        /// <summary>
+        /// Container for all impelementations of Idbmetods
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public interface IDBoperations<T> : ISimpDBORAoperations<T>, ISimpPOSTGRoperations<T>, ICopmapreLST<T> where T : class, new()
         {          
             

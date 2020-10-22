@@ -76,14 +76,14 @@ namespace DB_Conect
             return await Get_Ora(Sql_ora, Task_name, D_columns, P_columns, P_types, parameters);
         }
         /// <summary>
-        /// Get datasets from ORACLE - use this override when columns in query and in class T is diferent and use prepared parameters 
+        /// To Do => Get datasets from ORACLE - use this override when columns in query and in class T is diferent and use prepared parameters 
         /// </summary>
         /// <param name="Sql_ora"></param>
         /// <param name="Task_name"></param>
         /// <param name="D_columns"></param>
         /// <param name="P_columns"></param>
         /// <returns></returns>
-        public async Task<List<T>> Get_Ora(string Sql_ora, string Task_name, Dictionary<string, int> D_columns, Dictionary<int, string> P_columns, Dictionary<int, Type> P_types, ORA_parameters parameters)
+        public async Task<List<T>> Get_Ora(string Sql_ora, string Task_name, Dictionary<string, int> D_columns, Dictionary<int, string> P_columns, Dictionary<int, Type> P_types, ORA_parameters _parameters)
         {
             List<T> Rows = new List<T>();
             try
