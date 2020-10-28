@@ -48,6 +48,9 @@ namespace Common
         /// <typeparam name="T"></typeparam>
         public interface ISimpDBORAoperations <T> where T :class,new()
         {
+            /// <summary>
+            /// Get datasets from ORACLE - use this override when columns in query and in class T is same  
+            /// </summary>
             Task<List<T>> Get_Ora(string Sql_ora, string Task_name);
         }
         /// <summary>
@@ -56,11 +59,27 @@ namespace Common
         /// <typeparam name="T"></typeparam>
         public interface ICopmapreLST <T> where T : class, new()
         {
+            /// <summary>
+            /// Find changes
+            /// </summary>
+            /// <param name="Old_list"></param>
+            /// <param name="New_list"></param>
+            /// <param name="ID_column"></param>
+            /// <param name="IntSorted_by"></param>
+            /// <param name="guid_col"></param>
+            /// <returns></returns>
             IChanges_list<T> Changes(List<T> Old_list,
                                             List<T> New_list,
                                             string[] ID_column,
                                             string IntSorted_by,
                                             string guid_col);
+            /// <summary>
+            /// Set changes in database table
+            /// </summary>
+            /// <param name="_list"></param>
+            /// <param name="name_table"></param>
+            /// <param name="guid_col"></param>
+            /// <returns></returns>
             Task<int> PSTRG_Changes_to_dataTable(IChanges_list<T> _list,
                                                           string name_table,
                                                           string guid_col,
@@ -73,13 +92,15 @@ namespace Common
         /// <typeparam name="T"></typeparam>
         public interface ISimpPOSTGRoperations <T> where T : class, new()
         {
+            /// <summary>
+            /// Get datasets from POSTEGRES - use this override when columns in query and in class T is same
+            /// </summary>
+            /// <param name="Sql_ora"></param>
+            /// <param name="Task_name"></param>
+            /// <returns></returns>
             Task<List<T>> Get_PSTGR(string Sql_ora,
                                     string Task_name);
         }
-        /// <summary>
-        /// Container for all impelementations of Idbmetods
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
         public interface IDBoperations<T> : ISimpDBORAoperations<T>, ISimpPOSTGRoperations<T>, ICopmapreLST<T> where T : class, new()
         {          
             
